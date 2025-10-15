@@ -1,7 +1,7 @@
 "use client";
-import Link from "next/link";
-import Image from "next/image";
 import Footer from "@/components/Footer";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -24,7 +24,7 @@ export default function Home() {
             {/* Main Content */}
             <div className="space-y-4 md:space-y-6 mb-10 md:mb-16">
               <h1 className="font-funnel-display text-3xl md:text-5xl lg:text-7xl font-bold text-black max-w-4xl">
-                We are FIL Builders
+                BlockNotes
               </h1>
               <p className="font-funnel-display text-lg md:text-xl text-gray-500">
                 Cross the Filecoin chasm with us.
@@ -38,7 +38,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between border-t border-gray-200 pt-6 md:pt-8 gap-4 md:gap-0">
             <div className="flex items-center gap-2">
               <span className="ffont-funnel-display text-gray-900">
-                Welcome to Filecoin Starter Kit
+                Welcome to BlockNotes Starter Kit
               </span>
             </div>
             <div className="flex flex-col md:flex-row gap-2 md:gap-0 w-full md:w-auto">

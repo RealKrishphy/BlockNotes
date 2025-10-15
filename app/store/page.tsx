@@ -1,15 +1,14 @@
 "use client";
-import Link from "next/link";
-import Image from "next/image";
 import Footer from "@/components/Footer";
 import { WalletConnect } from "@/components/walletConnect";
-import { useAccount, useSwitchChain, useChainId } from "wagmi";
-import { base, baseSepolia, avalanche, avalancheFuji } from "wagmi/chains";
-import { useMemo, useState, useEffect, useRef, useCallback } from "react";
-import { ethers } from "ethers";
-import { CONTRACT_ABI, CONTRACT_ADDRESS } from "@/lib/contract";
 import { useEthersProvider, useEthersSigner } from "@/hooks/useEthers";
-import lighthouse from '@lighthouse-web3/sdk';
+import { CONTRACT_ABI, CONTRACT_ADDRESS } from "@/lib/contract";
+import { ethers } from "ethers";
+import Image from "next/image";
+import Link from "next/link";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { useAccount, useChainId, useSwitchChain } from "wagmi";
+import { avalanche, avalancheFuji, base, baseSepolia } from "wagmi/chains";
 
 type FaucetChain = typeof base | typeof baseSepolia | typeof avalanche | typeof avalancheFuji;
 
@@ -51,7 +50,7 @@ export default function Faucet() {
   const LIGHTHOUSE_API_KEY = process.env.NEXT_PUBLIC_LIGHTHOUSE_API_KEY || "YOUR_API_KEY";
 
   const progressCallback = (progressData: any) => {
-    let percentageDone = ((progressData?.uploaded / progressData?.total) * 100)?.toFixed(2);
+    const percentageDone = ((progressData?.uploaded / progressData?.total) * 100)?.toFixed(2);
     setUploadProgress(parseFloat(percentageDone) || 0);
     console.log(percentageDone);
   };
